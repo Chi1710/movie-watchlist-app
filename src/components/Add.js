@@ -10,12 +10,10 @@ export const Add = () => {
     const onChange = e => {
         e.preventDefault();
         setQuery(e.target.value);
-        fetch(`https://api.themoviedb.org/3/search/movie?
-        api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1
-        &include_adult=false&query=${e.target.value}`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`)
         .then((response) => response.json())
         .then((data) => {
-            if(!data.err){
+            if(!data.errors){
                 setResutls(data.results);
             } else {
                 setResutls([]);

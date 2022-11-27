@@ -7,9 +7,11 @@ import {Add} from "./components/Add";
 import './App.css';
 import "./lib/font-awesome/css/all.min.css";
 import './App.css';
+import {GlobalProvider} from "./context/GlobalState";
 
 function App() {
   return (
+    <GlobalProvider>
     <Router>
 
       <Header />
@@ -28,6 +30,7 @@ function App() {
       </Routes>
 
     </Router>
+    </GlobalProvider>
   );
 }
 
