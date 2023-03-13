@@ -8,8 +8,7 @@ const initialState = {
     : [], 
     watched:  localStorage.getItem('watched') 
     ? JSON.parse(localStorage.getItem('watched')) 
-    : []
-    
+    : []   
 }
 
 // create context
@@ -24,14 +23,15 @@ export const GlobalProvider = props => {
         localStorage.setItem('watched', JSON.stringify(state.watched));
     }, [state]);
     
-
     //action
     const addMovieToWatchlist = (movie) => {
         dispatch({type: "ADD_MOVIE_TO_WATCHLIST", payload: movie});
     }
-
     const removedMovieFromWatchlist = (id) => {
         dispatch({type: "REMOVED_MOVIE_FROM_WATCHLIST", payload: id});
+    }
+    const addMovieToWatched = (movie) => {
+        dispatch({type: "ADD_MOVIE_TO_WATCHED", payload: movie});
     }
 
     return (
@@ -40,7 +40,8 @@ export const GlobalProvider = props => {
             watchlist: state.watchlist,
             watched: state.watched, 
             addMovieToWatchlist,
-            removedMovieFromWatchlist
+            removedMovieFromWatchlist,
+            addMovieToWatched 
         }}
          >
             {props.children}
