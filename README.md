@@ -3,7 +3,7 @@ Movie Watchlist App
 This application allow user to search movie by title, displaying search movies with poster, title and the year made with options to add it to WatchList and Watch page. Once movies are added to watchlist, user can delete or move the movie to watched. In watched, user can move the movie back to watchlist or delete it.
 
 Demo link - https://chi1710.github.io/movie-watchlist-app/
-![](MovieWatchlistApp.gif | width=100)
+![](MovieWatchlistApp.gif)
 
 
 
